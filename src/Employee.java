@@ -56,6 +56,7 @@ public class Employee {
         this.salary = salary;
     }
 
+    @Override
     public String toString() {
         return id + " " + lastName + " " + firstName + " " + patronymic + " " + department + " " + salary + "\n";
     }

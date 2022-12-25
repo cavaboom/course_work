@@ -14,12 +14,14 @@ public class Main {
       employees[8] = new Employee("Михайлов", "Алексей", "Иванович", 5, 14000);
       employees[9] = new Employee("Рябов", "Алексей", "Иванович", 5, 9000);
 
-      System.out.println(Arrays.toString(employees));
+      printAllEmployee(employees);
       System.out.println("Сумма затрат на зарплаты в месяц: " + sumExpenses());
       System.out.println("Минимальная зарплата " + minSalary());
       System.out.println("Максимальная зарплата " + maxSalary());
       System.out.println("Cреднее значение зарплат " + avgSalary());
   }
+
+  // Сумма затрат на зарплаты
    public static double sumExpenses(){
       double expenses = 0;
       for (var employee : employees){
@@ -28,6 +30,7 @@ public class Main {
       return expenses;
    }
 
+   // Минимальная зарплата
    public static double minSalary(){
       double min = employees[0].getSalary();
       for (var employee : employees){
@@ -38,6 +41,7 @@ public class Main {
       return min;
    }
 
+   // Максимальная зарплата
    public static double maxSalary(){
       double max = employees[0].getSalary();
       for (var employee : employees){
@@ -48,9 +52,17 @@ public class Main {
       return max;
    }
 
+   // Средняя зарплата
    public static double avgSalary(){
       double avg = 0;
       avg = sumExpenses()/employees.length;
       return avg;
+   }
+
+   // Вывод всех сотрудников со всеми данными
+   public static void printAllEmployee(Employee[] employees) {
+      for (int i = 0; i < employees.length; i++) {
+         System.out.println(employees[i]);
+      }
    }
 }
